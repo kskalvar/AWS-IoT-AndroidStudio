@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="3dp"
+    tools:context=".TemperatureActivity">
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/refresh"
+        android:clickable="true"
+        android:contentDescription="@string/refresh"
+        android:onClick="getShadow"
+        tools:ignore="RtlHardcoded" />
+
+    <ToggleButton
+        android:id="@+id/enableButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/updateSetpoint"
+        android:layout_alignBottom="@+id/updateSetpoint"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:onClick="openCloseClicked"
+        android:text="@string/enabled"
+        android:textOff="@string/disabled"
+        android:textOn="@string/enabled"
+        tools:ignore="RelativeOverlap" />
+
+    <NumberPicker
+        android:id="@+id/setpoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="95dp"
+        android:layout_toLeftOf="@+id/updateSetpoint"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/updateSetpoint"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="162dp"
+        android:onClick="updateSetpoint"
+        android:text="@string/SetpointButtonText"
+        tools:ignore="RtlHardcoded" />
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TemperatureControl</string>
+    <string name="enabled">Open</string>
+    <string name="SetpointButtonText">Set</string>
+    <string name="disabled">Closed</string>
+    <string name="refresh">refresh</string>
+</resources>
