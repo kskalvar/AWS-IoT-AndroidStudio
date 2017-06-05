@@ -7,7 +7,7 @@ var endpoint = {
 }
 
 var thing = {
-    "thingName": 'MyIoTDevice'
+    "thingName": 'myiotdevice'
 }
 
 var AWS = require('aws-sdk');
@@ -21,9 +21,10 @@ exports.handler = function(event, context) {
           console.log(data);
           var jsonPayload = JSON.parse(data.payload);
           var windowOpen = jsonPayload.state.desired.windowOpen;
+          var roomTemperature = jsonPayload.state.desired.roomTemperature
 
-          if (windowOpen) {
-                console.log('windowOpen was open');
+          if (windowOpen && roomTemperature > 72) {
+                console.log('windowOpen was open and roomTemperature > 72');
 
                 var update = {
                    "state": {
@@ -44,10 +45,6 @@ exports.handler = function(event, context) {
                    }
                 });
 
-
-
-          } else {
-                console.log('windowOpen was not open');
           }
 
       }
